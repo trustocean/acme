@@ -856,6 +856,10 @@ externalAccountRequired (optional, boolean):
 newAccount requests include an "externalAccountBinding" field associating the
 new account with an external account.
 
+csrEager (optional, boolean):
+: If this field is present and set to "true", then the CA requires submit CSR
+payload when newOrder, and remove CSR payload in the request to order finalize.
+
 Clients access the directory by sending a GET request to the directory URL.
 
 ~~~~~~~~~~
@@ -873,7 +877,8 @@ Content-Type: application/json
     "termsOfService": "https://example.com/acme/terms/2017-5-30",
     "website": "https://www.example.com/",
     "caaIdentities": ["example.com"],
-    "externalAccountRequired": false
+    "externalAccountRequired": false,
+    "csrEager": false,
   }
 }
 ~~~~~~~~~~
