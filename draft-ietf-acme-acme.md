@@ -878,7 +878,7 @@ Content-Type: application/json
     "website": "https://www.example.com/",
     "caaIdentities": ["example.com"],
     "externalAccountRequired": false,
-    "csrEager": false,
+    "csrEager": false
   }
 }
 ~~~~~~~~~~
