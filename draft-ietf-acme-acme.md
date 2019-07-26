@@ -1759,6 +1759,10 @@ notAfter (optional, string):
 : The requested value of the notAfter field in the certificate, in the date
 format defined in {{!RFC3339}}.
 
+csr (optional, string):
+: The certificate sign request for the certificate, it should be in the payload
+if only directory's meta csrEager equals true.
+
 ~~~~~~~~~~
 POST /acme/new-order HTTP/1.1
 Host: example.com
@@ -1777,7 +1781,8 @@ Content-Type: application/jose+json
       { "type": "dns", "value": "example.org" }
     ],
     "notBefore": "2016-01-01T00:04:00+04:00",
-    "notAfter": "2016-01-08T00:04:00+04:00"
+    "notAfter": "2016-01-08T00:04:00+04:00",
+    "csr": "MIIBPTCBxAIBADBFMQ...FS6aKdZeGsysoCo4H9P"
   }),
   "signature": "H6ZXtGjTZyUnPeKn...wEA4TklBdh3e454g"
 }
@@ -1840,7 +1845,8 @@ csr (required, string):
 : A CSR encoding the parameters for the certificate being requested {{!RFC2986}}.
 The CSR is sent in the base64url-encoded version of the DER format.  (Note:
 Because this field uses base64url, and does not include headers, it is different
-from PEM.)
+from PEM. It should be in the payload if only directory's meta csrEager equals
+false.)
 
 ~~~~~~~~~~
 POST /acme/order/TOlocE8rfgo/finalize HTTP/1.1
