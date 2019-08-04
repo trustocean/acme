@@ -1782,7 +1782,8 @@ Content-Type: application/jose+json
     ],
     "notBefore": "2016-01-01T00:04:00+04:00",
     "notAfter": "2016-01-08T00:04:00+04:00",
-    "csr": "MIIBPTCBxAIBADBFMQ...FS6aKdZeGsysoCo4H9P"
+    "csr": "MIIBPTCBxAIBADBFMQ...FS6aKdZeGsysoCo4H9P",
+    "challenge_type": "http-01"
   }),
   "signature": "H6ZXtGjTZyUnPeKn...wEA4TklBdh3e454g"
 }
